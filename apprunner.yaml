@@ -1,0 +1,28 @@
+version: 1.0
+runtime: python3
+build:
+  commands:
+    build:
+      - pip3 install -r requirements.txt
+run:
+  runtime-version: 3.11
+  command: python3 -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 2
+  network:
+    port: 8000
+  env:
+    - name: HOST
+      value: "0.0.0.0"
+    - name: PORT
+      value: "8000"
+    - name: DEBUG
+      value: "False"
+    - name: APP_NAME
+      value: "Sparks AI Brain"
+    - name: APP_VERSION
+      value: "1.0.0"
+    - name: GEMINI_MODEL
+      value: "gemini-2.5-flash"
+    - name: GEMINI_TEMPERATURE
+      value: "0.1"
+    - name: GEMINI_MAX_TOKENS
+      value: "8192"
