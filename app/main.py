@@ -48,6 +48,12 @@ app.add_middleware(
 )
 
 
+@app.get("/")
+async def root():
+    """Default health check endpoint for AWS App Runner."""
+    return {"status": "ok"}
+
+
 @app.get("/health")
 async def health_check():
     """Return service health status without authentication."""
