@@ -25,3 +25,7 @@ run:
       value: "0.1"
     - name: GEMINI_MAX_TOKENS
       value: "8192"
+    - name: GEMINI_API_KEY
+      value: "dummy_key_to_pass_startup"
+    - name: SERVICE_API_KEY
+      value: "dummy_key_to_pass_startup"
